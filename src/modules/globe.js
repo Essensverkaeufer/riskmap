@@ -1,10 +1,12 @@
 import { getRiskMeta, hasSourceDisagreement } from "./riskScale.js";
 
 export function createGlobe(containerId) {
-  const baseLayer = Cesium.ImageryLayer.fromProviderAsync(
-    Cesium.TileMapServiceImageryProvider.fromUrl(
-      Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII"),
-    ),
+  const baseLayer = new Cesium.ImageryLayer(
+    new Cesium.UrlTemplateImageryProvider({
+      url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      credit: "Tiles (c) Esri, Maxar, Earthstar Geographics, and the GIS User Community",
+      maximumLevel: 18,
+    }),
   );
 
   const viewer = new Cesium.Viewer(containerId, {
@@ -22,7 +24,7 @@ export function createGlobe(containerId) {
     terrainProvider: new Cesium.EllipsoidTerrainProvider(),
   });
 
-  viewer.scene.globe.baseColor = Cesium.Color.fromCssColorString("#263238");
+  viewer.scene.globe.baseColor = Cesium.Color.fromCssColorString("#05090c");
   viewer.scene.skyAtmosphere.show = true;
   viewer.scene.requestRenderMode = true;
   viewer.camera.setView({
@@ -48,7 +50,7 @@ export async function addCountries(viewer, data) {
     const disagreement = hasSourceDisagreement(sources);
 
     entity.properties.location_id = locationId;
-    entity.polygon.material = Cesium.Color.fromCssColorString(meta.color).withAlpha(0.38);
+    entity.polygon.material = Cesium.Color.fromCssColorString(meta.color).withAlpha(0.22);
     entity.polygon.outline = true;
     entity.polygon.outlineColor = disagreement
       ? Cesium.Color.WHITE
@@ -73,7 +75,7 @@ export async function addRegions(viewer, data) {
     const disagreement = hasSourceDisagreement(sources);
 
     entity.properties.location_id = locationId;
-    entity.polygon.material = Cesium.Color.fromCssColorString(meta.color).withAlpha(0.72);
+    entity.polygon.material = Cesium.Color.fromCssColorString(meta.color).withAlpha(0.36);
     entity.polygon.outline = true;
     entity.polygon.outlineColor = disagreement
       ? Cesium.Color.WHITE
