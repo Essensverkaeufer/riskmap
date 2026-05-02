@@ -1,0 +1,23 @@
+[
+  {
+    "id": "usa",
+    "name": "United States",
+    "type": "country",
+    "iso2": "US",
+    "iso3": "USA"
+  },
+  {
+    "id": "deu",
+    "name": "Germany",
+    "type": "country",
+    "iso2": "DE",
+    "iso3": "DEU"
+  },
+  {
+    "id": "ukr",
+    "name": "Ukraine",
+    "type": "country",
+    "iso2": "UA",
+    "iso3": "UKR"
+  }
+]
