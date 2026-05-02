@@ -48,13 +48,74 @@ export async function addCountries(viewer, data) {
     const disagreement = hasSourceDisagreement(sources);
 
     entity.properties.location_id = locationId;
-    entity.polygon.material = Cesium.Color.fromCssColorString(meta.color).withAlpha(0.68);
+    entity.polygon.material = Cesium.Color.fromCssColorString(meta.color).withAlpha(0.38);
     entity.polygon.outline = true;
     entity.polygon.outlineColor = disagreement
       ? Cesium.Color.WHITE
       : Cesium.Color.fromCssColorString("#101416");
     entity.polygon.outlineWidth = disagreement ? 3 : 1;
   });
+}
+
+export async function addRegions(viewer, data) {
+  const source = await Cesium.GeoJsonDataSource.load(data.regions, {
+    clampToGround: false,
+  });
+
+  source.name = "regions";
+  viewer.dataSources.add(source);
+
+  source.entities.values.forEach((entity) => {
+    const locationId = entity.properties?.location_id?.getValue();
+    const risk = data.riskByLocationId[locationId];
+    const sources = data.sourcesByLocationId[locationId] || [];
+    const meta = getRiskMeta(risk?.risk_level);
+    const disagreement = hasSourceDisagreement(sources);
+
+    entity.properties.location_id = locationId;
+    entity.polygon.material = Cesium.Color.fromCssColorString(meta.color).withAlpha(0.72);
+    entity.polygon.outline = true;
+    entity.polygon.outlineColor = disagreement
+      ? Cesium.Color.WHITE
+      : Cesium.Color.fromCssColorString("#f5f8f7");
+    entity.polygon.outlineWidth = disagreement ? 3 : 1.5;
+  });
+}
+
+export function addCities(viewer, data) {
+  data.locations
+    .filter((location) => location.type === "city")
+    .forEach((city) => {
+      const risk = data.riskByLocationId[city.id];
+      const meta = getRiskMeta(risk?.risk_level);
+
+      viewer.entities.add({
+        name: city.name,
+        position: Cesium.Cartesian3.fromDegrees(city.longitude, city.latitude, 50000),
+        properties: new Cesium.PropertyBag({
+          location_id: city.id,
+        }),
+        point: {
+          color: Cesium.Color.fromCssColorString(meta.color),
+          pixelSize: 11,
+          outlineColor: Cesium.Color.WHITE,
+          outlineWidth: 2,
+          heightReference: Cesium.HeightReference.NONE,
+        },
+        label: {
+          text: city.name,
+          font: "12px sans-serif",
+          fillColor: Cesium.Color.WHITE,
+          outlineColor: Cesium.Color.BLACK,
+          outlineWidth: 3,
+          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+          pixelOffset: new Cesium.Cartesian2(0, -18),
+          showBackground: true,
+          backgroundColor: Cesium.Color.fromCssColorString("#101416").withAlpha(0.72),
+          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 12000000),
+        },
+      });
+    });
 }
 
 export async function addConflictZones(viewer, conflictZones) {
