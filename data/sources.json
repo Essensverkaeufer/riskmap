@@ -1,0 +1,37 @@
+[
+  {
+    "location_id": "usa",
+    "source_name": "Sample Foreign Office",
+    "original_level": "Exercise normal precautions",
+    "normalized_level": 1,
+    "link": "https://example.com/advisories/usa"
+  },
+  {
+    "location_id": "usa",
+    "source_name": "Sample Security Provider",
+    "original_level": "Low to moderate",
+    "normalized_level": 2,
+    "link": "https://example.com/security/usa"
+  },
+  {
+    "location_id": "deu",
+    "source_name": "Sample Foreign Office",
+    "original_level": "Low risk",
+    "normalized_level": 1,
+    "link": "https://example.com/advisories/germany"
+  },
+  {
+    "location_id": "ukr",
+    "source_name": "Sample Foreign Office",
+    "original_level": "Do not travel",
+    "normalized_level": 5,
+    "link": "https://example.com/advisories/ukraine"
+  },
+  {
+    "location_id": "ukr",
+    "source_name": "Sample Security Provider",
+    "original_level": "Extreme",
+    "normalized_level": 5,
+    "link": "https://example.com/security/ukraine"
+  }
+]
