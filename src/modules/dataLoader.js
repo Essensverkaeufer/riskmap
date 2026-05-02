@@ -7,6 +7,8 @@ const DATA_PATHS = {
   conflictZones: "./data/conflictZones.sample.geojson",
 };
 
+export { DATA_PATHS };
+
 async function fetchJson(path) {
   const response = await fetch(path);
   if (!response.ok) {
