@@ -19,5 +19,61 @@
     "type": "country",
     "iso2": "UA",
     "iso3": "UKR"
+  },
+  {
+    "id": "deu-by",
+    "name": "Bavaria",
+    "type": "region",
+    "parent_id": "deu"
+  },
+  {
+    "id": "deu-be",
+    "name": "Berlin",
+    "type": "region",
+    "parent_id": "deu"
+  },
+  {
+    "id": "usa-ca",
+    "name": "California",
+    "type": "region",
+    "parent_id": "usa"
+  },
+  {
+    "id": "ukr-30",
+    "name": "Kyiv Region",
+    "type": "region",
+    "parent_id": "ukr"
+  },
+  {
+    "id": "city-berlin",
+    "name": "Berlin",
+    "type": "city",
+    "parent_id": "deu-be",
+    "latitude": 52.52,
+    "longitude": 13.405
+  },
+  {
+    "id": "city-munich",
+    "name": "Munich",
+    "type": "city",
+    "parent_id": "deu-by",
+    "latitude": 48.137,
+    "longitude": 11.575
+  },
+  {
+    "id": "city-los-angeles",
+    "name": "Los Angeles",
+    "type": "city",
+    "parent_id": "usa-ca",
+    "latitude": 34.0522,
+    "longitude": -118.2437
+  },
+  {
+    "id": "city-kyiv",
+    "name": "Kyiv",
+    "type": "city",
+    "parent_id": "ukr-30",
+    "latitude": 50.4501,
+    "longitude": 30.5234
   }
 ]
