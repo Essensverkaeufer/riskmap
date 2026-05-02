@@ -1,0 +1,23 @@
+[
+  {
+    "location_id": "usa",
+    "risk_level": 2,
+    "summary": "Generally stable travel environment with localized security and weather risks.",
+    "override_flag": false,
+    "updated_at": "2026-05-02"
+  },
+  {
+    "location_id": "deu",
+    "risk_level": 1,
+    "summary": "Low baseline travel risk with routine urban safety considerations.",
+    "override_flag": false,
+    "updated_at": "2026-05-02"
+  },
+  {
+    "location_id": "ukr",
+    "risk_level": 5,
+    "summary": "Active conflict conditions create severe travel and security risk.",
+    "override_flag": true,
+    "updated_at": "2026-05-02"
+  }
+]
