@@ -1,10 +1,12 @@
 import { loadRiskMapData } from "./modules/dataLoader.js";
+import { bindCoverageManager } from "./modules/coverageManager.js";
 import { createGlobe, addCities, addCountries, addConflictZones, addRegions } from "./modules/globe.js";
 import { bindSelectionPanel } from "./modules/interaction.js";
 
 const statusEl = document.querySelector("#dataStatus");
 const panelEl = document.querySelector("#infoPanel");
 const closePanelEl = document.querySelector("#closePanel");
+const coverageManagerEl = document.querySelector("#coverageManager");
 
 async function boot() {
   const data = await loadRiskMapData();
@@ -15,6 +17,7 @@ async function boot() {
   addCities(globe, data);
   await addConflictZones(globe, data.conflictZones);
   bindSelectionPanel(globe, data, panelEl, closePanelEl);
+  bindCoverageManager(data, coverageManagerEl);
 
   statusEl.textContent = `${data.locations.length} locations loaded`;
 }
