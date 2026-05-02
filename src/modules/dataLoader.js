@@ -3,6 +3,7 @@ const DATA_PATHS = {
   riskData: "./data/riskData.json",
   sources: "./data/sources.json",
   countries: "./data/countries.sample.geojson",
+  regions: "./data/regions.sample.geojson",
   conflictZones: "./data/conflictZones.sample.geojson",
 };
 
@@ -15,11 +16,12 @@ async function fetchJson(path) {
 }
 
 export async function loadRiskMapData() {
-  const [locations, riskData, sources, countries, conflictZones] = await Promise.all([
+  const [locations, riskData, sources, countries, regions, conflictZones] = await Promise.all([
     fetchJson(DATA_PATHS.locations),
     fetchJson(DATA_PATHS.riskData),
     fetchJson(DATA_PATHS.sources),
     fetchJson(DATA_PATHS.countries),
+    fetchJson(DATA_PATHS.regions),
     fetchJson(DATA_PATHS.conflictZones),
   ]);
 
@@ -28,6 +30,7 @@ export async function loadRiskMapData() {
     riskData,
     sources,
     countries,
+    regions,
     conflictZones,
     locationsById: indexBy(locations, "id"),
     riskByLocationId: indexBy(riskData, "location_id"),
