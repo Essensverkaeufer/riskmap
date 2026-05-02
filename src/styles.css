@@ -136,7 +136,8 @@ h1 {
 }
 
 .swatch,
-.outline-swatch {
+.outline-swatch,
+.city-swatch {
   width: 16px;
   height: 16px;
   flex: 0 0 auto;
@@ -146,6 +147,15 @@ h1 {
 .outline-swatch {
   border: 2px solid #ffffff;
   background: transparent;
+}
+
+.city-swatch {
+  width: 12px;
+  height: 12px;
+  margin-left: 2px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: var(--caution);
 }
 
 .safe {
