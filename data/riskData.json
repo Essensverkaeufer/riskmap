@@ -1,48 +1,48 @@
 [
   {
-    "location_id": "usa",
+    "location_id": "country-usa",
     "risk_level": 2,
     "summary": "Generally stable travel environment with localized security and weather risks.",
     "override_flag": false,
     "updated_at": "2026-05-02"
   },
   {
-    "location_id": "deu",
+    "location_id": "country-deu",
     "risk_level": 1,
     "summary": "Low baseline travel risk with routine urban safety considerations.",
     "override_flag": false,
     "updated_at": "2026-05-02"
   },
   {
-    "location_id": "ukr",
+    "location_id": "country-ukr",
     "risk_level": 5,
     "summary": "Active conflict conditions create severe travel and security risk.",
     "override_flag": true,
     "updated_at": "2026-05-02"
   },
   {
-    "location_id": "deu-by",
+    "location_id": "region-de-by",
     "risk_level": 1,
     "summary": "Low regional security risk with routine travel precautions.",
     "override_flag": false,
     "updated_at": "2026-05-02"
   },
   {
-    "location_id": "deu-be",
+    "location_id": "region-de-be",
     "risk_level": 2,
     "summary": "Generally stable urban region with large-city safety considerations.",
     "override_flag": false,
     "updated_at": "2026-05-02"
   },
   {
-    "location_id": "usa-ca",
+    "location_id": "region-us-ca",
     "risk_level": 2,
     "summary": "Mostly stable travel environment with localized wildfire, weather, and urban security risks.",
     "override_flag": false,
     "updated_at": "2026-05-02"
   },
   {
-    "location_id": "ukr-30",
+    "location_id": "region-ua-30",
     "risk_level": 5,
     "summary": "Severe conflict-related risk affects regional movement and emergency response.",
     "override_flag": true,
