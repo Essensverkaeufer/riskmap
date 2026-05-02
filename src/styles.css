@@ -78,6 +78,31 @@ body {
   border-radius: 8px;
 }
 
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.toolbar-button {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.toolbar-button.primary {
+  background: #2f7dbd;
+}
+
 .eyebrow,
 .panel-kicker {
   margin: 0 0 4px;
@@ -188,6 +213,109 @@ h1 {
   border-radius: 8px;
 }
 
+.coverage-manager {
+  position: absolute;
+  z-index: 7;
+  inset: 96px 18px 18px auto;
+  width: min(680px, calc(100vw - 36px));
+  max-height: calc(100vh - 114px);
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  background: var(--panel);
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(16px);
+}
+
+.coverage-header,
+.coverage-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.coverage-header {
+  margin-bottom: 18px;
+}
+
+.coverage-header h2 {
+  margin-bottom: 0;
+}
+
+.coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.file-drop {
+  display: grid;
+  gap: 8px;
+  min-height: 92px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.file-drop span {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.file-drop input {
+  max-width: 100%;
+  color: var(--muted);
+}
+
+.coverage-actions {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.coverage-summary {
+  color: var(--muted);
+}
+
+.coverage-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.coverage-stat {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.coverage-stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.coverage-stat strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--text);
+  font-size: 1.3rem;
+}
+
+.coverage-issues {
+  border-top: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+.coverage-issues ul {
+  margin-bottom: 0;
+}
+
 .panel-close {
   position: absolute;
   top: 10px;
@@ -269,6 +397,10 @@ summary {
     min-height: auto;
   }
 
+  .topbar-actions {
+    justify-content: flex-start;
+  }
+
   .legend {
     display: none;
   }
@@ -281,5 +413,15 @@ summary {
     width: auto;
     max-height: 46vh;
     padding: 18px;
+  }
+
+  .coverage-manager {
+    inset: 96px 12px 12px;
+    width: auto;
+  }
+
+  .coverage-grid,
+  .coverage-stat-grid {
+    grid-template-columns: 1fr;
   }
 }
