@@ -1,10 +1,15 @@
 import { getRiskMeta, hasSourceDisagreement } from "./riskScale.js";
 
 export function createGlobe(containerId) {
-  Cesium.Ion.defaultAccessToken = "";
+  const baseLayer = Cesium.ImageryLayer.fromProviderAsync(
+    Cesium.TileMapServiceImageryProvider.fromUrl(
+      Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII"),
+    ),
+  );
 
   const viewer = new Cesium.Viewer(containerId, {
     animation: false,
+    baseLayer,
     baseLayerPicker: false,
     fullscreenButton: false,
     geocoder: false,
@@ -17,7 +22,7 @@ export function createGlobe(containerId) {
     terrainProvider: new Cesium.EllipsoidTerrainProvider(),
   });
 
-  viewer.scene.globe.baseColor = Cesium.Color.fromCssColorString("#20292d");
+  viewer.scene.globe.baseColor = Cesium.Color.fromCssColorString("#263238");
   viewer.scene.skyAtmosphere.show = true;
   viewer.scene.requestRenderMode = true;
   viewer.camera.setView({
