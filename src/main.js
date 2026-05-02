@@ -1,5 +1,5 @@
 import { loadRiskMapData } from "./modules/dataLoader.js";
-import { createGlobe, addCountries, addConflictZones } from "./modules/globe.js";
+import { createGlobe, addCities, addCountries, addConflictZones, addRegions } from "./modules/globe.js";
 import { bindSelectionPanel } from "./modules/interaction.js";
 
 const statusEl = document.querySelector("#dataStatus");
@@ -11,6 +11,8 @@ async function boot() {
   const globe = createGlobe("cesiumContainer");
 
   await addCountries(globe, data);
+  await addRegions(globe, data);
+  addCities(globe, data);
   await addConflictZones(globe, data.conflictZones);
   bindSelectionPanel(globe, data, panelEl, closePanelEl);
 
