@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "usa",
+        "name": "United States"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-124.8, 24.5],
+            [-66.9, 24.5],
+            [-66.9, 49.4],
+            [-124.8, 49.4],
+            [-124.8, 24.5]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "deu",
+        "name": "Germany"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [5.8, 47.2],
+            [15.1, 47.2],
+            [15.1, 55.1],
+            [5.8, 55.1],
+            [5.8, 47.2]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "ukr",
+        "name": "Ukraine"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [22.1, 44.4],
+            [40.2, 44.4],
+            [40.2, 52.4],
+            [22.1, 52.4],
+            [22.1, 44.4]
+          ]
+        ]
+      }
+    }
+  ]
+}
