@@ -35,6 +35,18 @@ RiskMap treats locations as layered records:
 
 All three levels use the same `riskData.json` and `sources.json` structure, which keeps the later backend upgrade path clean.
 
+## Recommended source datasets
+
+- Natural Earth: public-domain country boundaries and populated places for lightweight global defaults.
+- geoBoundaries: CC BY 4.0 country and administrative-region boundaries, with simplified downloads suitable for web visualization.
+- GeoNames: CC BY populated-place records for broader city coverage.
+
+For GitHub Pages, keep the checked-in GeoJSON simplified. Large full-detail global administrative files can make the app slow and expensive for visitors to load.
+
+## Coverage Manager
+
+Open Coverage Manager in the app to load the current static data, upload replacement JSON/GeoJSON files, inspect missing risk/source records, and export updated files. This keeps coverage work browser-based while preserving the no-backend architecture.
+
 ## Risk scale
 
 1. Safe
