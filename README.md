@@ -7,7 +7,9 @@ RiskMap is a static, browser-only 3D globe prototype for visualizing travel and 
 - CesiumJS globe setup
 - Static JSON data loading from `data/`
 - Country coloring by unified 1-5 risk level
-- Click-to-open country detail panel
+- Region/sub-country boundary overlays for province/state/canton style risk
+- Individual city markers tied to the same risk/source model
+- Click-to-open detail panel for countries, regions, or cities
 - Source comparison display
 - Basic source disagreement outline styling
 - Conflict-zone GeoJSON overlay support
@@ -18,9 +20,20 @@ RiskMap is a static, browser-only 3D globe prototype for visualizing travel and 
 - `data/riskData.json`: normalized risk level, summary, and manual override flag
 - `data/sources.json`: source-by-source advisory comparison
 - `data/countries.sample.geojson`: starter country polygons linked by `location_id`
+- `data/regions.sample.geojson`: starter internal region polygons linked by `location_id`
 - `data/conflictZones.sample.geojson`: starter overlay layer
 
-Replace the sample GeoJSON with complete country boundaries when you are ready. Keep the `properties.location_id` value aligned with `locations.json`.
+Replace the sample GeoJSON with complete boundaries when you are ready. Keep every `properties.location_id` value aligned with `locations.json`.
+
+## Location levels
+
+RiskMap treats locations as layered records:
+
+- `country`: national boundary in `countries.sample.geojson`
+- `region`: internal state/province/canton boundary in `regions.sample.geojson`
+- `city`: point marker using `latitude` and `longitude` in `locations.json`
+
+All three levels use the same `riskData.json` and `sources.json` structure, which keeps the later backend upgrade path clean.
 
 ## Risk scale
 
