@@ -1,62 +1,62 @@
 [
   {
-    "location_id": "usa",
+    "location_id": "country-usa",
     "source_name": "Sample Foreign Office",
     "original_level": "Exercise normal precautions",
     "normalized_level": 1,
     "link": "https://example.com/advisories/usa"
   },
   {
-    "location_id": "usa",
+    "location_id": "country-usa",
     "source_name": "Sample Security Provider",
     "original_level": "Low to moderate",
     "normalized_level": 2,
     "link": "https://example.com/security/usa"
   },
   {
-    "location_id": "deu",
+    "location_id": "country-deu",
     "source_name": "Sample Foreign Office",
     "original_level": "Low risk",
     "normalized_level": 1,
     "link": "https://example.com/advisories/germany"
   },
   {
-    "location_id": "ukr",
+    "location_id": "country-ukr",
     "source_name": "Sample Foreign Office",
     "original_level": "Do not travel",
     "normalized_level": 5,
     "link": "https://example.com/advisories/ukraine"
   },
   {
-    "location_id": "ukr",
+    "location_id": "country-ukr",
     "source_name": "Sample Security Provider",
     "original_level": "Extreme",
     "normalized_level": 5,
     "link": "https://example.com/security/ukraine"
   },
   {
-    "location_id": "deu-by",
+    "location_id": "region-de-by",
     "source_name": "Sample Regional Advisory",
     "original_level": "Low",
     "normalized_level": 1,
     "link": "https://example.com/regions/bavaria"
   },
   {
-    "location_id": "deu-be",
+    "location_id": "region-de-be",
     "source_name": "Sample Regional Advisory",
     "original_level": "Low to moderate",
     "normalized_level": 2,
     "link": "https://example.com/regions/berlin"
   },
   {
-    "location_id": "usa-ca",
+    "location_id": "region-us-ca",
     "source_name": "Sample Regional Advisory",
     "original_level": "Moderate",
     "normalized_level": 2,
     "link": "https://example.com/regions/california"
   },
   {
-    "location_id": "ukr-30",
+    "location_id": "region-ua-30",
     "source_name": "Sample Regional Advisory",
     "original_level": "Extreme",
     "normalized_level": 5,
