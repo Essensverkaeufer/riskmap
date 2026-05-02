@@ -1,54 +1,54 @@
 [
   {
-    "id": "usa",
+    "id": "country-usa",
     "name": "United States",
     "type": "country",
     "iso2": "US",
     "iso3": "USA"
   },
   {
-    "id": "deu",
+    "id": "country-deu",
     "name": "Germany",
     "type": "country",
     "iso2": "DE",
     "iso3": "DEU"
   },
   {
-    "id": "ukr",
+    "id": "country-ukr",
     "name": "Ukraine",
     "type": "country",
     "iso2": "UA",
     "iso3": "UKR"
   },
   {
-    "id": "deu-by",
+    "id": "region-de-by",
     "name": "Bavaria",
     "type": "region",
-    "parent_id": "deu"
+    "parent_id": "country-deu"
   },
   {
-    "id": "deu-be",
+    "id": "region-de-be",
     "name": "Berlin",
     "type": "region",
-    "parent_id": "deu"
+    "parent_id": "country-deu"
   },
   {
-    "id": "usa-ca",
+    "id": "region-us-ca",
     "name": "California",
     "type": "region",
-    "parent_id": "usa"
+    "parent_id": "country-usa"
   },
   {
-    "id": "ukr-30",
+    "id": "region-ua-30",
     "name": "Kyiv Region",
     "type": "region",
-    "parent_id": "ukr"
+    "parent_id": "country-ukr"
   },
   {
     "id": "city-berlin",
     "name": "Berlin",
     "type": "city",
-    "parent_id": "deu-be",
+    "parent_id": "region-de-be",
     "latitude": 52.52,
     "longitude": 13.405
   },
@@ -56,7 +56,7 @@
     "id": "city-munich",
     "name": "Munich",
     "type": "city",
-    "parent_id": "deu-by",
+    "parent_id": "region-de-by",
     "latitude": 48.137,
     "longitude": 11.575
   },
@@ -64,7 +64,7 @@
     "id": "city-los-angeles",
     "name": "Los Angeles",
     "type": "city",
-    "parent_id": "usa-ca",
+    "parent_id": "region-us-ca",
     "latitude": 34.0522,
     "longitude": -118.2437
   },
@@ -72,7 +72,7 @@
     "id": "city-kyiv",
     "name": "Kyiv",
     "type": "city",
-    "parent_id": "ukr-30",
+    "parent_id": "region-ua-30",
     "latitude": 50.4501,
     "longitude": 30.5234
   }
