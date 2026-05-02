@@ -33,5 +33,61 @@
     "original_level": "Extreme",
     "normalized_level": 5,
     "link": "https://example.com/security/ukraine"
+  },
+  {
+    "location_id": "deu-by",
+    "source_name": "Sample Regional Advisory",
+    "original_level": "Low",
+    "normalized_level": 1,
+    "link": "https://example.com/regions/bavaria"
+  },
+  {
+    "location_id": "deu-be",
+    "source_name": "Sample Regional Advisory",
+    "original_level": "Low to moderate",
+    "normalized_level": 2,
+    "link": "https://example.com/regions/berlin"
+  },
+  {
+    "location_id": "usa-ca",
+    "source_name": "Sample Regional Advisory",
+    "original_level": "Moderate",
+    "normalized_level": 2,
+    "link": "https://example.com/regions/california"
+  },
+  {
+    "location_id": "ukr-30",
+    "source_name": "Sample Regional Advisory",
+    "original_level": "Extreme",
+    "normalized_level": 5,
+    "link": "https://example.com/regions/kyiv"
+  },
+  {
+    "location_id": "city-berlin",
+    "source_name": "Sample City Security Note",
+    "original_level": "Moderate urban caution",
+    "normalized_level": 2,
+    "link": "https://example.com/cities/berlin"
+  },
+  {
+    "location_id": "city-munich",
+    "source_name": "Sample City Security Note",
+    "original_level": "Low",
+    "normalized_level": 1,
+    "link": "https://example.com/cities/munich"
+  },
+  {
+    "location_id": "city-los-angeles",
+    "source_name": "Sample City Security Note",
+    "original_level": "Moderate",
+    "normalized_level": 2,
+    "link": "https://example.com/cities/los-angeles"
+  },
+  {
+    "location_id": "city-kyiv",
+    "source_name": "Sample City Security Note",
+    "original_level": "Do not travel",
+    "normalized_level": 5,
+    "link": "https://example.com/cities/kyiv"
   }
 ]
