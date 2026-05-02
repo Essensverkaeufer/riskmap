@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sample conflict overlay"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [31.0, 47.0],
+            [38.0, 47.0],
+            [38.0, 50.5],
+            [31.0, 50.5],
+            [31.0, 47.0]
+          ]
+        ]
+      }
+    }
+  ]
+}
