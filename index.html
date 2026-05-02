@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RiskMap</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/cesium@1.121.1/Build/Cesium/Widgets/widgets.css"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="globe-stage" aria-label="Interactive travel risk globe">
+        <div id="cesiumContainer"></div>
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Global Travel Security</p>
+            <h1>RiskMap</h1>
+          </div>
+          <div class="status-pill" id="dataStatus">Loading data</div>
+        </div>
+        <aside class="legend" aria-label="Risk legend">
+          <div class="legend-title">Risk Level</div>
+          <div class="legend-item"><span class="swatch safe"></span>Safe</div>
+          <div class="legend-item"><span class="swatch caution"></span>Caution</div>
+          <div class="legend-item"><span class="swatch elevated"></span>Elevated Risk</div>
+          <div class="legend-item"><span class="swatch high"></span>High Risk</div>
+          <div class="legend-item"><span class="swatch critical"></span>Do Not Travel</div>
+          <div class="legend-item"><span class="outline-swatch"></span>Source disagreement</div>
+        </aside>
+      </section>
+
+      <aside class="info-panel" id="infoPanel" aria-live="polite">
+        <button class="panel-close" id="closePanel" type="button" aria-label="Close details">&times;</button>
+        <p class="panel-kicker">Select a country</p>
+        <h2>Explore the globe</h2>
+        <p class="panel-summary">
+          Click a colored region to inspect its unified risk level, source comparisons, and manual override status.
+        </p>
+      </aside>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/cesium@1.121.1/Build/Cesium/Cesium.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
