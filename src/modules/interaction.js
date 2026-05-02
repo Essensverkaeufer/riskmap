@@ -23,7 +23,7 @@ function renderEmptyPanel(panelEl) {
     <button class="panel-close" id="closePanel" type="button" aria-label="Close details">&times;</button>
     <p class="panel-kicker">Select a country</p>
     <h2>Explore the globe</h2>
-    <p class="panel-summary">Click a colored region to inspect its unified risk level, source comparisons, and manual override status.</p>
+    <p class="panel-summary">Click a country, region, or city to inspect its unified risk level, source comparisons, and manual override status.</p>
   `;
 
   panelEl.querySelector("#closePanel").addEventListener("click", () => {
@@ -31,7 +31,7 @@ function renderEmptyPanel(panelEl) {
       <button class="panel-close" id="closePanel" type="button" aria-label="Close details">&times;</button>
       <p class="panel-kicker">Select a country</p>
       <h2>Explore the globe</h2>
-      <p class="panel-summary">Click a colored region to inspect its unified risk level, source comparisons, and manual override status.</p>
+      <p class="panel-summary">Click a country, region, or city to inspect its unified risk level, source comparisons, and manual override status.</p>
     `;
   });
 }
