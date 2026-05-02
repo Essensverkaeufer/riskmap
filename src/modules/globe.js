@@ -26,7 +26,7 @@ export function createGlobe(containerId) {
   viewer.scene.skyAtmosphere.show = true;
   viewer.scene.requestRenderMode = true;
   viewer.camera.setView({
-    destination: Cesium.Cartesian3.fromDegrees(12, 24, 18500000),
+    destination: Cesium.Cartesian3.fromDegrees(12, 18, 42000000),
   });
 
   return viewer;
