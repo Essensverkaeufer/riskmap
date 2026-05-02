@@ -1,13 +1,14 @@
 # RiskMap
 
-RiskMap is a static, browser-only 3D globe prototype for visualizing travel and security risk by country. It uses CesiumJS, local JSON files, and GeoJSON overlays, so it can be hosted on GitHub Pages without a backend or database.
+RiskMap is a static, browser-only 3D globe prototype for visualizing travel and security risk by country, internal region, and city. It uses CesiumJS, static JSON overrides, remote public GeoJSON boundaries, and satellite imagery, so it can be hosted on GitHub Pages without a backend or database.
 
 ## What is included
 
-- CesiumJS globe setup
-- Static JSON data loading from `data/`
-- Country coloring by unified 1-5 risk level
-- Region/sub-country boundary overlays for province/state/canton style risk
+- CesiumJS globe setup with satellite imagery
+- Static JSON override loading from `data/`
+- Full country coverage synthesized from Natural Earth/DataHub country boundaries
+- Full admin-1 region coverage synthesized from Natural Earth/DataHub region boundaries
+- Placeholder risk records for every generated country and region
 - Individual city markers tied to the same risk/source model
 - Click-to-open detail panel for countries, regions, or cities
 - Source comparison display
@@ -16,32 +17,32 @@ RiskMap is a static, browser-only 3D globe prototype for visualizing travel and 
 
 ## Data files
 
-- `data/locations.json`: location identity and metadata
-- `data/riskData.json`: normalized risk level, summary, and manual override flag
-- `data/sources.json`: source-by-source advisory comparison
-- `data/countries.sample.geojson`: starter country polygons linked by `location_id`
-- `data/regions.sample.geojson`: starter internal region polygons linked by `location_id`
+- `data/locations.json`: curated/override location metadata and city points
+- `data/riskData.json`: curated/override normalized risk level, summary, and manual override flag
+- `data/sources.json`: curated source-by-source advisory comparison
+- Countries are loaded from the Natural Earth/DataHub countries GeoJSON URL by default.
+- Regions are loaded from the Natural Earth/DataHub global admin-1 GeoJSON URL by default.
 - `data/conflictZones.sample.geojson`: starter overlay layer
 
-Replace the sample GeoJSON with complete boundaries when you are ready. Keep every `properties.location_id` value aligned with `locations.json`.
+Local JSON files are the override layer. The app synthesizes placeholder country and region records from boundary GeoJSON, then overlays any matching records from `locations.json`, `riskData.json`, and `sources.json`.
 
 ## Location levels
 
 RiskMap treats locations as layered records:
 
-- `country`: national boundary in `countries.sample.geojson`
-- `region`: internal state/province/canton boundary in `regions.sample.geojson`
+- `country`: national boundary from the country GeoJSON
+- `region`: internal state/province/canton boundary from admin-1 GeoJSON
 - `city`: point marker using `latitude` and `longitude` in `locations.json`
 
 All three levels use the same `riskData.json` and `sources.json` structure, which keeps the later backend upgrade path clean.
 
 ## Recommended source datasets
 
-- Natural Earth: public-domain country boundaries and populated places for lightweight global defaults.
-- geoBoundaries: CC BY 4.0 country and administrative-region boundaries, with simplified downloads suitable for web visualization.
+- Natural Earth/DataHub: public-domain country and admin-1 boundaries for lightweight global defaults.
+- geoBoundaries: CC BY 4.0 country and administrative-region boundaries when you need more official administrative coverage country by country.
 - GeoNames: CC BY populated-place records for broader city coverage.
 
-For GitHub Pages, keep the checked-in GeoJSON simplified. Large full-detail global administrative files can make the app slow and expensive for visitors to load.
+For GitHub Pages, keep checked-in GeoJSON simplified or remotely loaded. Large full-detail global administrative files can make the app slow and expensive for visitors to load.
 
 ## Coverage Manager
 
