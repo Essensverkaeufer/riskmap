@@ -1,7 +1,7 @@
-import { loadRiskMapData } from "./modules/dataLoader.js";
-import { bindCoverageManager } from "./modules/coverageManager.js";
-import { createGlobe, addCities, addCountries, addConflictZones, addRegions } from "./modules/globe.js";
-import { bindSelectionPanel } from "./modules/interaction.js";
+import { loadRiskMapData } from "./modules/dataLoader.js?v=global-boundaries-2";
+import { bindCoverageManager } from "./modules/coverageManager.js?v=global-boundaries-2";
+import { createGlobe, addCities, addCountries, addConflictZones, addRegions } from "./modules/globe.js?v=global-boundaries-2";
+import { bindSelectionPanel } from "./modules/interaction.js?v=global-boundaries-2";
 
 const statusEl = document.querySelector("#dataStatus");
 const panelEl = document.querySelector("#infoPanel");
